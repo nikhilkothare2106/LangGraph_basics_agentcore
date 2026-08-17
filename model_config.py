@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 from pydantic import SecretStr
 from langchain_groq import ChatGroq
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
 
 load_dotenv()
 
@@ -11,4 +12,9 @@ model = ChatGroq(
     model="openai/gpt-oss-20b",
     temperature=0,
     api_key=SecretStr(api_key) if api_key else None,
+)
+
+embedding_model = HuggingFaceEndpointEmbeddings(
+    model="sentence-transformers/all-MiniLM-L6-v2",
+    huggingfacehub_api_token=os.getenv("HF_TOKEN"),
 )
