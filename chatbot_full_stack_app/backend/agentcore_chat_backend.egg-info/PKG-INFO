@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: agentcore-chat-backend
+Version: 0.1.0
+Summary: FastAPI backend wrapping the boto3 bedrock-agentcore invoke_agent_runtime call
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi==0.115.0
+Requires-Dist: uvicorn[standard]==0.30.6
+Requires-Dist: boto3>=1.40.0
+Requires-Dist: botocore>=1.40.0
+Requires-Dist: python-dotenv==1.0.1
+Requires-Dist: pydantic==2.9.2
+Provides-Extra: dev
+Requires-Dist: pytest==8.3.2; extra == "dev"
+Requires-Dist: httpx==0.27.2; extra == "dev"
